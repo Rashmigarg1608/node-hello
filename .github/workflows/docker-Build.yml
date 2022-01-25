@@ -1,0 +1,22 @@
+name: Docker Image 
+
+on:
+  push:
+    branches: [ main ]
+  
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      uses: uses/docker-build-push@v5
+      with:
+          image: rashmigarg16/rashimage
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
