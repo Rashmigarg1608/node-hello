@@ -5,17 +5,13 @@ pipeline {
             parallel {
                 stage('Test') {
                 agent {
-                        label "windows"
+                        label "docker"
                     }
                     
                     steps {
                         echo hii
                     }
-                    post {
-                        always {
-                            junit "**/TEST-*.xml"
-                        }
-                    }
+                    
                     
                 }
                 stage('Test') {
