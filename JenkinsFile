@@ -1,5 +1,5 @@
 pipeline {
-    agent none 
+    agent agent1
     stages {
         stage('Run Tests') {
             parallel {
@@ -16,7 +16,7 @@ pipeline {
                 }
                 stage('Test') {
                 agent {
-                        label "docker"
+                        label "windows"
                     }
                     
                     steps {
