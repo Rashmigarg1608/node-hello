@@ -6,7 +6,7 @@ pipeline {
        
         stage('Build') {
         agent {
-                        label "linux"
+                        label "docker"
                     }
             steps {
             
