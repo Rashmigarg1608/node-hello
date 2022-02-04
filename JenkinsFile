@@ -1,21 +1,17 @@
 pipeline {
-    agent none
+    agent any 
     stages {
         stage('Run Tests') {
             parallel {
                 stage('Test On Windows') {
-                    agent {
-                        label "docker"
-                    }
+                    
                     steps {
                         echo hii
                     }
                     
                 }
                 stage('Test On Docker') {
-                    agent {
-                        label "windows"
-                    }
+                    
                     steps {
                         echo hello
                     }
