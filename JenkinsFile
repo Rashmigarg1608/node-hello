@@ -14,7 +14,7 @@ pipeline {
                 }
                 stage('Test On Docker') {
                     agent {
-                        label "window"
+                        label "windows"
                     }
                     steps {
                         echo hello
