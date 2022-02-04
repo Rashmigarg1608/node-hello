@@ -5,15 +5,16 @@ pipeline {
     stages {
        
         stage('Build') {
-        agent {
-                        label "docker"
-                    }
+        
             steps {
             
                echo 'Building..'
             }
         }
         stage('Test') {
+        agent {
+                        label "windows"
+                    }
             steps {
                 echo 'Testing..'
             }
