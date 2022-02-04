@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
         agent {
-                        label "windows"
+                        label "docker"
                     }
             steps {
                 echo 'Testing..'
