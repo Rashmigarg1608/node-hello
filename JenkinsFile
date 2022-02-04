@@ -9,7 +9,7 @@ pipeline {
                     }
                     
                     steps {
-                        echo hii
+                        echo 'hii'
                     }
                     
                     
@@ -20,7 +20,7 @@ pipeline {
                     }
                     
                     steps {
-                        echo hello
+                        echo 'hello'
                     }
                     
                 }
