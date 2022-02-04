@@ -1,8 +1,11 @@
 // Declarative //
 pipeline {
-    agent linux
+    agent none 
 
     stages {
+       agent {
+                        label "linux"
+                    }
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -21,8 +24,4 @@ pipeline {
     }
 }
 
-// Script //
-node {
-    checkout scm 
-    /* .. snip .. */
-}
+
