@@ -1,9 +1,9 @@
 pipeline {
-    agent any 
+    agent none 
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test On Windows') {
+                stage('Test') {
                 agent {
                         label "windows"
                     }
@@ -11,9 +11,14 @@ pipeline {
                     steps {
                         echo hii
                     }
+                    post {
+                        always {
+                            junit "**/TEST-*.xml"
+                        }
+                    }
                     
                 }
-                stage('Test On Docker') {
+                stage('Test') {
                 agent {
                         label "docker"
                     }
