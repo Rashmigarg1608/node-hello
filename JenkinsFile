@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test') {
+                stage('Test on Docker') {
                 agent {
                         label "docker"
                     }
@@ -14,7 +14,7 @@ pipeline {
                     
                     
                 }
-                stage('Test') {
+                stage('Test on windows') {
                 agent {
                         label "windows"
                     }
